@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.thankyou.ThankyouActivity">
+
+    <TextView
+        android:id="@+id/tvThankyou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_75sdp"
+        android:drawableTop="@drawable/ic__check"
+        android:drawablePadding="@dimen/_15sdp"
+        android:text="Thank you"
+        android:textSize="@dimen/_22ssp" />
+
+    <TextView
+        android:id="@+id/tvsendEmail"
+       android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvThankyou"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/_15sdp"
+        android:layout_marginLeft="@dimen/_18sdp"
+        android:layout_marginRight="@dimen/_18sdp"
+        android:gravity="center"
+        android:text="We've sent you an email with all details\nof your order.You can track shipment\nwith the order id below "
+        android:textSize="@dimen/_14ssp" />
+
+    <TextView
+        android:id="@+id/tvOrderId"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_below="@+id/tvsendEmail"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/_18sdp"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:layout_marginRight="@dimen/_18sdp"
+        android:background="@drawable/bg_card"
+        android:gravity="center"
+        android:text="CSK7845ECKC45 "
+        android:textSize="@dimen/_14ssp" />
+
+    <TextView
+        android:id="@+id/tvBackToShop"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_38sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorSkyBlue"
+        android:gravity="center"
+        android:text="BACK TO SHOP"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_12ssp" />
+</RelativeLayout>

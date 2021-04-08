@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.product.ProductListingActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/layoutActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorActionBar">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:padding="@dimen/_5ssp"
+            android:src="@drawable/ic_back" />
+
+        <FrameLayout
+            android:id="@+id/relativeLayoutCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:gravity="center">
+
+            <com.varunest.sparkbutton.SparkButton
+                android:id="@+id/imgCart"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:sparkbutton_activeImage="@drawable/ic_cart_filled"
+                app:sparkbutton_iconSize="22dp"
+                app:sparkbutton_inActiveImage="@drawable/ic_shoppings"
+                app:sparkbutton_primaryColor="@color/colorSkyBlue"
+                app:sparkbutton_secondaryColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/textViewCountCart"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="end"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:background="@drawable/badge_cart"
+                android:elevation="4dp"
+                android:gravity="center"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@color/colorBlack"
+                android:textSize="8sp"
+                android:visibility="visible" />
+
+
+        </FrameLayout>
+
+
+        <TextView
+            android:id="@+id/tvTittle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Product List"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_14ssp"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layoutActionBar">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerStore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorActionBar"
+            android:overScrollMode="never"
+            android:paddingLeft="@dimen/_15sdp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerProduct"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/recyclerStore"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:overScrollMode="never"
+            android:visibility="gone">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imgNoRecordFound"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/nodatafound"
+        android:visibility="gone" />
+</RelativeLayout>

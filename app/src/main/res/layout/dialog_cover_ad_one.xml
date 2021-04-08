@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerCoverAdOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_15sdp"
+        android:overScrollMode="never" />
+
+    <RelativeLayout
+        android:id="@+id/layoutAction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recyclerCoverAdOne"
+        android:layout_alignLeft="@+id/recyclerCoverAdOne"
+        android:layout_alignRight="@+id/recyclerCoverAdOne">
+
+        <TextView
+            android:id="@+id/tvOk"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:padding="@dimen/_5sdp"
+            android:text="OK"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_14ssp" />
+
+        <TextView
+            android:id="@+id/tvCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginRight="@dimen/_50sdp"
+            android:layout_toLeftOf="@+id/tvOk"
+            android:padding="@dimen/_5sdp"
+            android:text="CANCEL"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_14ssp" />
+    </RelativeLayout>
+
+</RelativeLayout>
+

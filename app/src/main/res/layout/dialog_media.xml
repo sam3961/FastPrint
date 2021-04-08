@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvChoose"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/_15sdp"
+            android:text="Choose"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_16ssp" />
+
+        <TextView
+            android:id="@+id/tvMedia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvChoose"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:gravity="center"
+            android:padding="@dimen/_10sdp"
+            android:text="Upload media"
+            android:textColor="@color/colorTextGrey"
+            android:textSize="@dimen/_14ssp" />
+
+
+
+        <TextView
+            android:id="@+id/tvUploadFile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvMedia"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:padding="@dimen/_10sdp"
+            android:text="Upload file"
+            android:textColor="@color/colorTextGrey"
+            android:textSize="@dimen/_14ssp" />
+
+        <TextView
+            android:id="@+id/tvCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvUploadFile"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:padding="@dimen/_10sdp"
+            android:gravity="end"
+            android:text="CANCEL"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:textColor="@color/colorRed"
+            android:textSize="@dimen/_14ssp" />
+    </RelativeLayout>
+</RelativeLayout>

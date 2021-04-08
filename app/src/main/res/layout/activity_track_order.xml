@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".ui.trackorder.TrackOrderActivity">
+
+    <RelativeLayout
+        android:id="@+id/layoutActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorActionBar">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:padding="@dimen/_5ssp"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/tvTittle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Track Order"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_14ssp"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tvCancelOrder"
+        android:layout_below="@+id/layoutActionBar"
+        android:layout_margin="@dimen/_15sdp">
+
+        <RelativeLayout
+            android:id="@+id/layoutOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorSkyBlue">
+
+            <TextView
+                android:id="@+id/ordernumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="ORDER NUMBER "
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/tvordernumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ordernumber"
+                android:layout_alignLeft="@+id/ordernumber"
+                android:text="#AD5646DVJKVE4545JVE776545"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_8ssp" />
+
+            <View
+                android:id="@+id/vi1"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@+id/tvordernumber"
+                android:layout_alignLeft="@+id/ordernumber"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:background="@android:color/white" />
+
+            <TextView
+                android:id="@+id/arrival"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/vi1"
+                android:layout_alignLeft="@+id/ordernumber"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="EXPECTED ARRIVAL "
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/tvarrival"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/arrival"
+                android:layout_alignLeft="@+id/ordernumber"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:text="22/08/2020 "
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_8ssp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/layoutOrder">
+
+            <LinearLayout
+                android:id="@+id/layoutLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_80sdp"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".33"
+                    android:src="@drawable/ic_checkl" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.22"
+                    android:background="@color/colorSkyBlue" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".33"
+                    android:src="@drawable/ic_checkl" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.22"
+                    android:background="@color/colorSkyBlue" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".33"
+                    android:src="@drawable/ic_checkl" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.22"
+                    android:background="@color/colorTextGrey" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".33"
+                    android:src="@drawable/ic_unchecklist" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layoutLine"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <TextView
+                    android:id="@+id/tvOrderProcessed"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.25"
+                    android:gravity="left"
+                    android:lineSpacingExtra="@dimen/_3sdp"
+                    android:text="Order\nProcessed"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_10ssp" />
+
+                <TextView
+                    android:id="@+id/tvOrderShipped"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.25"
+                    android:gravity="center"
+                    android:lineSpacingExtra="@dimen/_3sdp"
+                    android:text="Order\nShipped"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_10ssp" />
+
+                <TextView
+                    android:id="@+id/tvOrderRoute"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.25"
+                    android:gravity="end"
+                    android:lineSpacingExtra="@dimen/_3sdp"
+                    android:text="Order \nEn Route"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_10ssp" />
+
+                <TextView
+                    android:id="@+id/tvOrderArrived"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.25"
+                    android:gravity="end"
+                    android:lineSpacingExtra="@dimen/_3sdp"
+                    android:text="Order\nArrived"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_10ssp" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layoutImage"
+                android:alpha=".3"
+                android:src="@drawable/img_map" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvCancelOrder"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_38sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/_16sdp"
+        android:background="@drawable/bg_orange"
+        android:gravity="center"
+        android:text="CANCEL ORDER"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_12ssp" />
+
+</RelativeLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/_3sdp"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardElevation="@dimen/_4sdp"
+    app:cardCornerRadius="@dimen/_7sdp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_4sdp"
+        android:background="@android:color/white"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relativeLayoutTop">
+
+        <TextView
+            android:id="@+id/tvChoose"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="Enter Amount"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_16ssp" />
+
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:id="@+id/close"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_close_black"/>
+
+    </RelativeLayout>
+
+        <EditText
+            android:id="@+id/edAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relativeLayoutTop"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:gravity="start|center"
+            android:padding="@dimen/_10sdp"
+            android:hint="Amount"
+            android:inputType="numberDecimal"
+            android:background="@drawable/rect_grey_bg_white"
+            android:textColor="@color/colorTextGrey"
+            android:textSize="@dimen/_14ssp" />
+
+        <TextView
+            android:id="@+id/tvPay"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:background="@drawable/bg_buynow_skyblue"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/edAmount"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="Pay With Paypal"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_12ssp" />
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

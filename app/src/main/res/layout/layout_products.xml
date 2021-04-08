@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_90sdp"
+    android:layout_margin="@dimen/_3sdp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_3sdp"
+        android:background="@android:color/white"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="3dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_3sdp">
+
+            <ImageView
+                android:id="@+id/imgProduct"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:scaleType="fitXY" />
+
+            <ImageView
+                android:id="@+id/imgArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:src="@drawable/ic_arrow_right" />
+
+            <TextView
+                android:id="@+id/tvProductName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_3sdp"
+                android:layout_toLeftOf="@+id/imgArrow"
+                android:layout_toRightOf="@+id/imgProduct"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_12ssp" />
+
+            <RatingBar
+                android:id="@+id/rating"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvProductName"
+                android:layout_alignLeft="@+id/tvProductName"
+                android:layout_marginLeft="-8dp"
+                android:numStars="5"
+                android:scaleX=".8"
+                android:scaleY=".8"
+                android:theme="@style/RatingBar" />
+
+            <TextView
+                android:id="@+id/tvtotalRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvProductName"
+                android:layout_marginLeft="@dimen/_1sdp"
+                android:layout_toRightOf="@+id/rating"
+                android:text=""
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_8ssp" />
+
+
+            <LinearLayout
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rating"
+                android:layout_alignLeft="@+id/tvProductName"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/tvDiscountPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:text=""
+                    android:visibility="gone"
+                    android:textColor="@color/colorTextGrey"
+                    android:textSize="@dimen/_10ssp" />
+
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:text=""
+
+                    android:textColor="@color/colorGreen"
+                    android:textSize="@dimen/_10ssp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
