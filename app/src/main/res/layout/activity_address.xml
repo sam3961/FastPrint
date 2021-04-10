@@ -130,10 +130,37 @@
 
 
                     <EditText
-                        android:id="@+id/editAddressLine1"
+                        android:id="@+id/phoneNumberBilling"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/layoutview"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:ellipsize="end"
+                        android:hint="Phone No."
+                        android:imeOptions="actionNext"
+                        android:inputType="phone"
+                        android:maxLines="1"
+                        android:padding="@dimen/_7sdp"
+                        android:textColor="@color/colorBlack"
+                        android:textColorHint="@color/colorTextGrey"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <View
+                        android:id="@+id/view011"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/phoneNumberBilling"
+                        android:layout_marginLeft="@dimen/_7sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:background="@color/colorTextGrey" />
+
+                    <EditText
+                        android:id="@+id/editAddressLine1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view011"
                         android:layout_marginTop="@dimen/_20sdp"
                         android:layout_weight="1"
                         android:background="@android:color/transparent"
@@ -444,12 +471,39 @@
                             android:background="@color/colorTextGrey" />
                     </LinearLayout>
 
+                    <EditText
+                        android:id="@+id/phoneNumberSelling"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/layoutShipview"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:ellipsize="end"
+                        android:hint="Phone No."
+                        android:imeOptions="actionNext"
+                        android:inputType="phone"
+                        android:maxLines="1"
+                        android:padding="@dimen/_7sdp"
+                        android:textColor="@color/colorBlack"
+                        android:textColorHint="@color/colorTextGrey"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <View
+                        android:id="@+id/viewShip011"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/phoneNumberSelling"
+                        android:layout_marginLeft="@dimen/_7sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:background="@color/colorTextGrey" />
+
 
                     <EditText
                         android:id="@+id/editShipAddressLine1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/layoutShipview"
+                        android:layout_below="@+id/viewShip011"
                         android:layout_marginTop="@dimen/_20sdp"
                         android:layout_weight="1"
                         android:background="@android:color/transparent"

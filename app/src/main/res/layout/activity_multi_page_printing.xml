@@ -544,7 +544,7 @@
                     android:clickable="true"
                     android:drawableRight="@drawable/ic_arrow_drop"
                     android:focusable="false"
-                    android:hint="Cover PaperGram "
+                    android:hint="Cover Paper Gram "
                     android:imeOptions="actionNext"
                     android:inputType="none"
                     android:maxLines="1"

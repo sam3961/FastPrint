@@ -79,6 +79,12 @@ public class AddressActivity extends BaseClass implements IAddress {
     @BindView(R.id.tvSave)
     TextView tvSave;
 
+   @BindView(R.id.phoneNumberBilling)
+    EditText editTextPhoneBilling;
+
+   @BindView(R.id.phoneNumberSelling)
+    EditText editTextPhoneShipping;
+
     @BindView(R.id.relativeLayoutShipMain)
     RelativeLayout relativeLayoutShipMainView;
 
@@ -165,6 +171,7 @@ public class AddressActivity extends BaseClass implements IAddress {
                     editFirstName.setEnabled(false);
                     editLastName.setEnabled(false);
                     editZip.setEnabled(false);
+                    editTextPhoneBilling.setEnabled(false);
                     scrollView.postDelayed(() -> scrollView.smoothScrollTo(0, scrollView.getHeight()), 200);
                 } else {
                     relativeLayoutShipTextFields.setVisibility(View.GONE);
@@ -176,6 +183,7 @@ public class AddressActivity extends BaseClass implements IAddress {
                     editFirstName.setEnabled(true);
                     editLastName.setEnabled(true);
                     editZip.setEnabled(true);
+                    editTextPhoneBilling.setEnabled(true);
                 }
             }
         });
@@ -205,7 +213,11 @@ public class AddressActivity extends BaseClass implements IAddress {
             editLastName.setError("Enter your name");
         } else if (editLastName.length() < 3 || editLastName.length() > 15) {
             editLastName.setError("last name should be between 3 to 15 characters");
-        } else if (editAddressLine1.getText().toString().trim().isEmpty()) {
+        } else if (editTextPhoneBilling.getText().toString().trim().isEmpty()) {
+            editTextPhoneBilling.setError("Enter phone number ");
+        }else if (editTextPhoneBilling.getText().toString().length()<8) {
+            editTextPhoneBilling.setError("Enter valid phone number ");
+        }else if (editAddressLine1.getText().toString().trim().isEmpty()) {
             editAddressLine1.setError("Enter address ");
         } else if (editCountry.getText().toString().trim().isEmpty()) {
             editCountry.setError("Enter country name");
@@ -221,7 +233,8 @@ public class AddressActivity extends BaseClass implements IAddress {
                 ipAddress.addBillingAddress(user_id, editFirstName.getText().toString().trim(), editLastName.getText().toString().trim(),
                         editAddressLine1.getText().toString().trim(),
                         editAddressLine2.getText().toString().trim(), editCity.getText().toString().trim(), editZip.getText().toString().trim(),
-                        editCity.getText().toString().trim(), editState.getText().toString().trim());
+                        editCity.getText().toString().trim(), editState.getText().toString().trim()
+                ,editTextPhoneBilling.getText().toString().trim());
             }
         }
     }
@@ -236,7 +249,12 @@ public class AddressActivity extends BaseClass implements IAddress {
             editShipLastName.setError("Enter your name");
         } else if (editShipLastName.length() < 3 || editShipLastName.length() > 15) {
             editShipLastName.setError("last name should be between 3 to 15 characters");
-        } else if (editShipAddressLine1.getText().toString().trim().isEmpty()) {
+        }else if (editTextPhoneShipping.getText().toString().trim().isEmpty()) {
+            editTextPhoneShipping.setError("Enter phone number ");
+        }else if (editTextPhoneShipping.getText().toString().length()<8) {
+            editTextPhoneShipping.setError("Enter valid phone number ");
+        }
+        else if (editShipAddressLine1.getText().toString().trim().isEmpty()) {
             editShipAddressLine1.setError("Enter address ");
         } else if (editShipCountry.getText().toString().trim().isEmpty()) {
             editShipCountry.setError("Enter country name");
@@ -257,7 +275,7 @@ public class AddressActivity extends BaseClass implements IAddress {
                         editShipCity.getText().toString().trim(),
                         editShipZip.getText().toString().trim(),
                         editShipCity.getText().toString().trim(),
-                        editShipState.getText().toString().trim());
+                        editShipState.getText().toString().trim(),editTextPhoneShipping.getText().toString());
             }
         }
     }
@@ -306,6 +324,7 @@ public class AddressActivity extends BaseClass implements IAddress {
             editCity.setText(getAddressResponseModel.getData().getCityName());
             editCountry.setText(getAddressResponseModel.getData().getCountryName());
             editState.setText(getAddressResponseModel.getData().getStateName());
+            editTextPhoneBilling.setText(getAddressResponseModel.getData().getPhoneNumber());
 
             relativeLayoutShipMainView.setVisibility(View.VISIBLE);
             tvSave.setText("Proceed to payment");

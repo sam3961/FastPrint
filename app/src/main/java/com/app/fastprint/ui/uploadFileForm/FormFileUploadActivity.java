@@ -159,7 +159,6 @@ public class FormFileUploadActivity extends BaseClass implements IPickResult, IF
             public void onStartSigning() {
                 tvSignatureHere.setText("");
                 imgClear.setVisibility(View.GONE);
-                Toast.makeText(FormFileUploadActivity.this, "OnStartSigning", Toast.LENGTH_SHORT).show();
             }
 
             @Override

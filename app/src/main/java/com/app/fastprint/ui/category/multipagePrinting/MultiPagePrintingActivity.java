@@ -318,7 +318,6 @@ public class MultiPagePrintingActivity extends BaseClass implements IPickResult,
             public void onStartSigning() {
                 tvSignatureHere.setText("");
                 imgClear.setVisibility(View.GONE);
-                Toast.makeText(MultiPagePrintingActivity.this, "OnStartSigning", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -384,10 +383,10 @@ public class MultiPagePrintingActivity extends BaseClass implements IPickResult,
                 mPaperTypeGramDialog();
                 break;
             case R.id.edtPaperGram:
-                mCoverofPageGramDialog();
+                mPaperTypeDialog();
                 break;
             case R.id.edtCoverPaperGram:
-                mPaperTypeDialog();
+                mCoverofPageGramDialog();
                 break;
             case R.id.edtUplaodFile:
                 if (runTimePermission()) {

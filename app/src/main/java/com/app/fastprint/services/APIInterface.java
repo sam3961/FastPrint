@@ -42,6 +42,7 @@ import com.app.fastprint.ui.signup.responseModel.SignUpResponseModel;
 import com.app.fastprint.ui.socialmedia.responseModel.SocialMediaResponseModel;
 import com.app.fastprint.ui.uploadFileForm.responseModel.UploadFileSubmitResponseModel;
 import com.app.fastprint.ui.uploadfile.responnseModel.UploadFileResponseModel;
+import com.google.gson.JsonObject;
 
 import java.util.HashMap;
 
@@ -327,6 +328,18 @@ public interface APIInterface {
                                        @Query("current_latitude") String current_latitude,
                                        @Query("current_longitude") String current_longitude);
 
+    @POST("os/v1/social_login")
+    Call<SocialLoginResponseModel> socialLogin(@Query("email") String email,
+                                               @Query("first_name") String first_name,
+                                               @Query("last_name") String last_name,
+                                               @Query("image") String image,
+                                               @Query("login_type") String login_type,
+                                               @Query("device_type") String device_type,
+                                               @Query("current_latitude") String current_lattitude,
+                                               @Query("current_longitude") String current_longitude,
+                                               @Query("device_token") String device_token);
+
+
     @POST("os/v1/policy")
     Call<OtherResponseModel> other();
 
@@ -362,21 +375,12 @@ public interface APIInterface {
                                                         @Query("city_name") String city_name,
                                                         @Query("zip_code") String zip_code,
                                                         @Query("country_name") String country_name,
-                                                        @Query("state_name") String state_name);
+                                                        @Query("state_name") String state_name,
+                                                        @Query("phone") String phone);
 
     @POST("os/v1/get_address")
     Call<GetAddressResponseModel> getAddress(@Query("user_id") String user_id);
 
-    @POST("os/v1/social_login")
-    Call<SocialLoginResponseModel> socialLogin(@Query("email") String email,
-                                               @Query("first_name") String first_name,
-                                               @Query("last_name") String last_name,
-                                               @Query("image") String image,
-                                               @Query("login_type") String login_type,
-                                               @Query("device_type") String device_type,
-                                               @Query("current_lattitude") String current_lattitude,
-                                               @Query("current_longitude") String current_longitude,
-                                               @Query("device_token") String device_token);
 
     @Multipart
     @POST("wc/v3/orders")
@@ -402,6 +406,10 @@ public interface APIInterface {
 
     @POST("os/v1/woo_keys?token=SBWoiw9UE9qx4NVLSHC9")
     Call<GenerateTokenResponse> generateToken();
+
+    @POST("os/v1/save_device_token")
+    Call<JsonObject> saveDeviceToken(@Query("device_token") String device_token,
+                                     @Query("device_type") String device_type);
 
     @POST("os/v1/get_notifications")
     Call<NotificationResponse> getNotifications();

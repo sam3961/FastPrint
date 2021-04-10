@@ -1234,11 +1234,13 @@ public class RetrofitCalls {
     // add billing address
     public void addBillingAddressApi(String user_id,String first_name,String last_name,
                                        String address_1,
-                                     String address_2, String city_name, String zip_code, String country_name,String state_name,
+                                     String address_2, String city_name, String zip_code, String country_name,
+                                     String state_name,String phone,
                                      final Handler mHandler) {
         final Message message = new Message();
-        Call<BillingAddressResponseModel> call = apiInterface.addBillingAddress(user_id,first_name,last_name,address_1,
-                address_2,city_name,zip_code,country_name,state_name);
+        Call<BillingAddressResponseModel> call = apiInterface.addBillingAddress(user_id,
+                first_name,last_name,address_1,
+                address_2,city_name,zip_code,country_name,state_name,phone);
         call.enqueue(new Callback<BillingAddressResponseModel>() {
             @Override
             public void onResponse(Call<BillingAddressResponseModel> call,

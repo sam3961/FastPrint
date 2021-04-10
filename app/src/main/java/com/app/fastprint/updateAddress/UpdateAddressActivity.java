@@ -138,7 +138,7 @@ public class UpdateAddressActivity extends BaseClass implements IUpdateAddress {
                 ipUpdateAddress.addBillingAddress(user_id, editFirstName.getText().toString().trim(), editLastName.getText().toString().trim(),
                         editAddressLine1.getText().toString().trim(),
                         editAddressLine2.getText().toString().trim(), editCity.getText().toString().trim(), editZip.getText().toString().trim(),
-                        editCity.getText().toString().trim(), editState.getText().toString().trim());
+                        editCity.getText().toString().trim(), editState.getText().toString().trim(),"");
             }
         }
     }

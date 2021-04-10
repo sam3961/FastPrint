@@ -11,8 +11,8 @@ android {
         applicationId "com.app.fastprint"
         minSdkVersion 17
         targetSdkVersion 30
-        versionCode 2
-        versionName "2.1"
+        versionCode 4
+        versionName "2.1.1"
         // Enabling multidex support.
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

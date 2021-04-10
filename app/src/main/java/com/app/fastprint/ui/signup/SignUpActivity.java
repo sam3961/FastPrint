@@ -113,11 +113,9 @@ public class SignUpActivity extends BaseClass implements ISignUp {
             editPassword.setError("Enter password");
         } else if (editPassword.length() < 6 || editPassword.length() > 16) {
             editPassword.setError("Password between 6 and 16 alphanumeric characters");
-        } else if (!CommonMethods.isValidPassword(editPassword.getText().toString().trim())) {
-            editPassword.setError("Password should contain 1 numeric or 1 character or 1 special character");
-        } else if (editCPassword.getText().toString().trim().isEmpty()) {
+        }  else if (editCPassword.getText().toString().trim().isEmpty()) {
             editCPassword.setError("Enter confirm password");
-        } else if (!editCPassword.getText().toString().trim().matches(editPassword.getText().toString().trim())) {
+        } else if (!editCPassword.getText().toString().trim().equals(editPassword.getText().toString().trim())) {
             editCPassword.setError("Password does not match");
 
         } else {

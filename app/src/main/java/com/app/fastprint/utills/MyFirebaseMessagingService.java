@@ -61,11 +61,11 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         Log.d("NotificationReceived","received"+remoteMessage);
         Log.d("NotificationReceived","notification"+remoteMessage.getNotification());
         showOtherNotification(getApplicationContext(),
-                remoteMessage.getData().get("title"), remoteMessage.getData().get("body"));
+                remoteMessage.getData().get("message"));
     }
 
-    private void showOtherNotification(Context context, String title, String body) {
-
+    private void showOtherNotification(Context context, String body) {
+        String title = "FastPrint";
         int notificationId = 10;
         String channelId = "${context.packageName}-FastPrint";
         NotificationManager notificationManager =

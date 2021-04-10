@@ -16,9 +16,12 @@ class PUpdateAddress implements IPUpdateAddress {
     }
 
     @Override
-    public void addBillingAddress(String user_id, String first_name, String last_name, String address_1, String address_2, String city_name, String zip_code, String country_name, String state_name) {
+    public void addBillingAddress(String user_id, String first_name, String last_name, String address_1,
+                                  String address_2, String city_name, String zip_code, String country_name,
+                                  String state_name,String phone) {
         imUpdateAddress=new MUpdateAddress(this);
-        imUpdateAddress.addBillingAddressRestCalls(user_id,first_name,last_name,address_1,address_2,city_name,zip_code,country_name,state_name);
+        imUpdateAddress.addBillingAddressRestCalls(user_id,first_name,last_name,address_1,address_2,
+                city_name,zip_code,country_name,state_name,phone);
     }
 
     @Override

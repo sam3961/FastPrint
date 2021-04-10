@@ -122,6 +122,7 @@ public class PaymentActivity extends BaseClass implements IPayment {
     String city_name = "";
     String state_name = "";
     String country_name = "";
+    String phone_number = "";
     String intent_From = "";
     String selectedPaymentMethod = "0";
     private ArrayList<CartListing> cartListing;
@@ -303,6 +304,7 @@ public class PaymentActivity extends BaseClass implements IPayment {
         RequestBody body_last_name = RequestBody.create(MediaType.parse("text/plain"), last_name);
         RequestBody body_methodId = RequestBody.create(MediaType.parse("text/plain"), methodId);
         RequestBody body_methodTitle = RequestBody.create(MediaType.parse("text/plain"), methodTitle);
+        RequestBody body_phone_number = RequestBody.create(MediaType.parse("text/plain"), phone_number);
         RequestBody body_amr_slug = RequestBody.create(MediaType.parse("text/plain"), "create_order");
 
         params.put("customer_id", body_customerId);
@@ -317,17 +319,17 @@ public class PaymentActivity extends BaseClass implements IPayment {
         params.put("billing[last_name]", body_last_name);
         params.put("billing[country]", body_country_name);
         params.put("billing[city]", body_city_name);
-        params.put("billing[phone]", body_user_phone);
+        params.put("billing[phone]", body_phone_number);
         params.put("billing[address_2]", body_address_2);
         params.put("shipping[postcode]", body_post_code);
         params.put("shipping[state]", body_state_name);
         params.put("shipping[first_name]", body_first_name);
+        params.put("shipping[phone]", body_phone_number);
         params.put("shipping[email]", body_user_email);
         params.put("shipping[address_1]", body_address_1);
         params.put("shipping[last_name]", body_last_name);
         params.put("shipping[country]", body_country_name);
         params.put("shipping[city]", body_city_name);
-        params.put("shipping[phone]", body_user_phone);
         params.put("shipping[address_2]", body_address_2);
 
         params.put("shipping_lines[0][method_id]", body_methodId);
@@ -426,6 +428,7 @@ public class PaymentActivity extends BaseClass implements IPayment {
         city_name = getAddressResponseModel.getData().getCityName();
         state_name = getAddressResponseModel.getData().getStateName();
         country_name = getAddressResponseModel.getData().getCountryName();
+        phone_number = getAddressResponseModel.getData().getPhoneNumber();
         tvAddress.setText(getAddressResponseModel.getData().getBillingAddress());
     }
 

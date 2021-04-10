@@ -55,7 +55,7 @@ public class MPaperGramAdapter extends RecyclerView.Adapter<MPaperGramAdapter.Vi
                 } else {
                     mCheckedPostion = position;
                     notifyDataSetChanged();
-                    MultiPagePrintingActivity.edtCoverPaperGram.setText(mpaperGramList.get(position));
+                    MultiPagePrintingActivity.edtPaperGram.setText(mpaperGramList.get(position));
                     MultiPagePrintingActivity.mpaperGrmDialog.dismiss();
 
 

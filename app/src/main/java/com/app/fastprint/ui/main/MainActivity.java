@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
@@ -18,6 +19,9 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import com.app.fastprint.services.APIClient;
+import com.app.fastprint.services.APIInterface;
+import com.app.fastprint.ui.payment.generateTokens.GenerateTokenResponse;
 import com.bumptech.glide.Glide;
 import com.app.fastprint.R;
 import com.app.fastprint.baseClass.BaseClass;
@@ -48,6 +52,8 @@ import com.google.android.play.core.review.ReviewInfo;
 import com.google.android.play.core.review.ReviewManager;
 import com.google.android.play.core.review.testing.FakeReviewManager;
 import com.google.android.play.core.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.gson.JsonObject;
 import com.varunest.sparkbutton.SparkButton;
 import com.varunest.sparkbutton.SparkEventListener;
 import com.viewpagerindicator.CirclePageIndicator;
@@ -60,6 +66,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends BaseClass implements ICategories {
 
@@ -225,7 +234,7 @@ public class MainActivity extends BaseClass implements ICategories {
             }
         });
         viewInitialization();
-
+        generateToken();
 
     }
 
@@ -463,6 +472,37 @@ public class MainActivity extends BaseClass implements ICategories {
     protected void onResume() {
         super.onResume();
         textViewCountCart.setText(AppControler.getInstance(context).getCartList(AppConstants.KEY_CART).size()+"");
+    }
+
+    private void hitApiForSaveDeviceToken(String auth_token) {
+        APIInterface apiService = APIClient.getRetrofitInstance().create(APIInterface.class);
+        Call<JsonObject> callGenerateToken = apiService.saveDeviceToken(auth_token,"A");
+
+        callGenerateToken.enqueue(new Callback<JsonObject>() {
+            @Override
+            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+            }
+
+            @Override
+            public void onFailure(Call<JsonObject> call, Throwable t) {
+                Toast.makeText(context, t.getMessage() + "", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+    }
+
+    private void generateToken() {
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(task -> {
+                    if (!task.isSuccessful()) {
+                        Log.w("TAG", "Fetching FCM registration token failed", task.getException());
+                        return;
+                    }
+
+                    // Get new FCM registration token
+                    hitApiForSaveDeviceToken(task.getResult());
+                });
     }
 
 
